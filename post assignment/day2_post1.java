@@ -1,8 +1,6 @@
 package java_dsa;
 import java.util.Arrays;
 public class day2_post1 {
-	
-	class getnum {
 	    public static void main(String[] args) {
 	        int[] arr={4,5,2,6,9,10};
 	        int target=8;
@@ -26,5 +24,5 @@ public class day2_post1 {
 	    }
 
 	}
-}
+
 
