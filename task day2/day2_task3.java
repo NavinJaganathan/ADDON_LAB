@@ -1,27 +1,18 @@
 package dsa;
 
-public class day2_task3 {
-	    public static int removeDuplicates(int[] nums) {
-	        if (nums == null || nums.length == 0) {
-	            return 0;
-	        }	        
-	        int i = 0; 
-	        for (int j = 1; j < nums.length; j++) {  
-	            if (nums[j] != nums[i]) {
-	                i++;
-	                nums[i] = nums[j];
-	            }
-	        }
-	        return i + 1;
-	    }
-	    public static void main(String[] args) {
-	        int[] arr = {1, 1, 2, 2, 3, 4, 4, 5};
-	        int length = removeDuplicates(arr);
+		import java.util.Arrays;
 
-	        System.out.println("Length of array after removing duplicates: " + length);
-	        System.out.print("Array elements: ");
-	        for (int i = 0; i < length; i++) {
-	            System.out.print(arr[i] + " ");
+	class rmdup {
+	    public static void main(String[] args) {
+	        int[] arr={2,3,4,4,5,8,2,3};
+	        Arrays.sort(arr);
+	        int i=0;
+	        for (int j=1;j<8;j++){
+	            if(arr[i]!=arr[j]){
+	                i++;
+	            }
+	            arr[i]=arr[j];
 	        }
-	    }
+	        System.out.println(Arrays.toString(Arrays.copyOfRange(arr, 0, i + 1)));
+	}
 	}
