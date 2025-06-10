@@ -1,48 +1,64 @@
 package java_dsa;
 
-public class day3_main {
-    Node head;
+class node {
+    int data;
+    node next;
 
-    static class Node {
-        int data;
-        Node next;
-        Node(int data) { this.data = data; }
+    node(int data) {
+        this.data = data;
     }
-
+}
+class revssl01 {
+    node head;
     void insert(int data) {
-        if (head == null) head = new Node(data);
-        else {
-            Node cur = head;
-            while (cur.next != null) cur = cur.next;
-            cur.next = new Node(data);
+        node newNode = new node(data);
+        if (head == null) {
+            head = newNode;
+            return;
         }
+        node temp = head;
+        while (temp.next != null)
+            temp = temp.next;
+        temp.next = newNode;
     }
-
+    void display() {
+        node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + "  ");
+            temp = temp.next;
+        }
+        
+    }
     void reverse() {
-        Node prev = null, curr = head;
-        while (curr != null) {
-            Node next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
+        node prev = null;
+        node current = head;
+        node next = null;
+
+        while (current != null) {
+            next = current.next;     
+            current.next = prev;    
+            prev = current;          
+            current = next;          
         }
-        head = prev;
-    }
 
-    void traverse() {
-        for (Node cur = head; cur != null; cur = cur.next)
-            System.out.print(cur.data + " -> ");
-        System.out.println("null");
+        head = prev; 
     }
+}
 
+public class day3_main {
     public static void main(String[] args) {
-        day3_main list = new day3_main();
-        list.insert(10); list.insert(20); list.insert(30);
+        revssl01 list = new revssl01();
+        list.insert(10);
+        list.insert(20);
+        list.insert(30);
+        list.insert(40);
+
         System.out.println("Original list:");
-        list.traverse();
+        list.display();
 
         list.reverse();
+
         System.out.println("Reversed list:");
-        list.traverse();
+        list.display();
     }
 }
