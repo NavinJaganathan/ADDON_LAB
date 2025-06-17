@@ -1,0 +1,11 @@
+ use student;
+ create table N(
+ name varchar(20),
+ Mark int,
+ Departemnt varchar(30),
+ Section varchar(10)
+ );
+insert into N values ("Babu",60,"CS","A"),("Hema",50,"CS","A"),("Mhagaligam",75,"CS","A"),("Selva",80,"CS","A");
+select*from N;
+
+select * from N where mark<=60;
