@@ -27,7 +27,7 @@ public class inventory {
 		                    insertvalues.insertvalues();
 		                    break;
 		                case 3:
-		                	System.out.println("Enter the Data(ex: id)");
+		                	System.out.println("Enter the Data(ex:id)");
 		                	 data = sc.nextInt();
 		                	deletedata.deletevalues(data);
 		                    break;
